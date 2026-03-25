@@ -1,0 +1,553 @@
+/* LandingPage.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Main Container */
+.landing-container {
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #4c1d95, #1e3a8a, #7c3aed, #db2777, #6366f1);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes gradientMove {
+  0%, 100% { background-position: 0% 50%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+}
+
+/* Animated Background Particles */
+.animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.animated-bg span {
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: float 25s infinite linear, pulse 3s infinite;
+}
+
+.animated-bg span:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.05);
+  width: 16px;
+  height: 16px;
+  animation-duration: 30s, 4s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.3; }
+}
+
+/* Cursor Effect */
+.cursor-effect {
+  position: fixed;
+  width: 384px;
+  height: 384px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.2;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.3) 0%, transparent 70%);
+  transition: all 0.3s ease;
+}
+
+/* Header */
+.landing-header {
+  position: relative;
+  z-index: 20;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #c4b5fd, #f9a8d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.landing-header nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.landing-header nav a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+}
+
+.landing-header nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transform: translateY(-2px) scale(1.05);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  color: white !important;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(139, 92, 246, 0.6);
+}
+
+/* Mobile menu */
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .landing-header nav {
+    display: none;
+  }
+  
+  .mobile-menu {
+    display: block;
+  }
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  z-index: 10;
+  padding: 100px 5% 150px;
+  text-align: center;
+}
+
+.hero-glass {
+  max-width: 900px;
+  margin: 0 auto;
+  backdrop-filter: blur(30px);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 60px 40px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.hero-glass:hover {
+  transform: translateY(-5px);
+}
+
+.hero-glass h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+  background: linear-gradient(135deg, #ffffff, #e5e7eb, #c4b5fd, #f9a8d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  line-height: 1.1;
+}
+
+.hero-glass p {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.hero-glass .highlight {
+  color: #c4b5fd;
+  font-weight: 600;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-primary.big {
+  font-size: 1.2rem;
+  padding: 18px 40px;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  box-shadow: 0 15px 35px rgba(124, 58, 237, 0.4);
+}
+
+.btn-primary.big:hover {
+  box-shadow: 0 20px 45px rgba(124, 58, 237, 0.6);
+}
+
+.btn-secondary {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 18px 40px;
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+@media (min-width: 640px) {
+  .hero-buttons {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-glass h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-glass p {
+    font-size: 1.1rem;
+  }
+  
+  .hero-glass {
+    padding: 40px 20px;
+  }
+  
+  .hero {
+    padding: 60px 5% 100px;
+  }
+}
+
+/* Features Section */
+.features {
+  position: relative;
+  z-index: 10;
+  padding: 80px 5%;
+}
+
+.features h2 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 60px;
+  background: linear-gradient(135deg, #ffffff, #c4b5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 40px 30px;
+  transition: all 0.5s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.feature-card:hover::before {
+  left: 100%;
+}
+
+.feature-emoji {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-emoji {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.feature-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.feature-desc {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Wow Features Section */
+.wow-features {
+  position: relative;
+  z-index: 10;
+  padding: 80px 5%;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(236, 72, 153, 0.3));
+}
+
+.wow-features h2 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 60px;
+  background: linear-gradient(135deg, #fbbf24, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.wow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wow-card {
+  backdrop-filter: blur(30px);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 50px 40px;
+  transition: all 0.5s ease;
+  text-align: center;
+  position: relative;
+}
+
+.wow-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.wow-emoji {
+  font-size: 4rem;
+  margin-bottom: 30px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.wow-card:hover .wow-emoji {
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.wow-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.wow-desc {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  z-index: 10;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px 5%;
+  text-align: center;
+}
+
+.footer p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+  
+  .wow-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-header {
+    padding: 15px 5%;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  .features h2,
+  .wow-features h2 {
+    font-size: 2.5rem;
+  }
+  
+  .features,
+  .wow-features {
+    padding: 60px 5%;
+  }
+  
+  .feature-card,
+  .wow-card {
+    padding: 30px 20px;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .wow-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-glass {
+    margin: 0 10px;
+    padding: 30px 20px;
+  }
+  
+  .hero-glass h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-glass p {
+    font-size: 1rem;
+  }
+  
+  .btn-primary.big {
+    font-size: 1rem;
+    padding: 15px 30px;
+  }
+  
+  .btn-secondary {
+    font-size: 1rem;
+    padding: 15px 30px;
+  }
+  
+  .features h2,
+  .wow-features h2 {
+    font-size: 2rem;
+  }
+}

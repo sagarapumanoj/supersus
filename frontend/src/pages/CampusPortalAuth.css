@@ -1,0 +1,295 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 950px;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    background: #4e54c8;
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.header h1 {
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.security-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #ffcc00;
+    color: #333;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center; /* center horizontally */
+    align-items: center;
+    gap: 10px; /* spacing between buttons */
+    background: #3f44a8;
+    padding: 5px 0;
+}
+
+.tab {
+    padding: 12px 25px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: 600;
+    border-radius: 8px;
+    min-width: 100px;
+}
+
+.tab.active {
+    background: #6a71e5;
+}
+
+.tab:hover {
+    background: #5a62d5;
+}
+
+/* Form container */
+.form-container {
+    padding: 30px;
+}
+
+/* Forms */
+.form {
+    display: none;
+}
+
+.form.active {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 24px;
+}
+
+/* Input layout: swap categories left, fields right */
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.input-group label {
+    min-width: 150px;
+    font-weight: 500;
+    color: #444;
+}
+
+.input-field, .select-field {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+.input-field:focus, .select-field:focus {
+    border-color: #4e54c8;
+    outline: none;
+}
+
+.input-error {
+    border-color: #e74c3c;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Password toggle */
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 42px;
+    cursor: pointer;
+    color: #777;
+}
+
+/* Buttons */
+.btn {
+    width: 100%;
+    padding: 15px;
+    background: #4e54c8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: #3f44a8;
+}
+
+.btn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Footer links */
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.form-footer a {
+    color: #4e54c8;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Option buttons (Accommodation / Hostel Type) */
+.option-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.option-button {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.option-button.selected {
+    border-color: #4e54c8;
+    background: #f0f4ff;
+}
+
+.option-button i {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #4e54c8;
+}
+
+.option-button p {
+    margin: 0;
+    font-weight: 500;
+}
+
+/* CAPTCHA */
+.captcha-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.captcha-code {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    padding: 10px;
+    background: #f0f0f0;
+    border-radius: 5px;
+    user-select: none;
+}
+
+.captcha-refresh {
+    cursor: pointer;
+    color: #4e54c8;
+    font-size: 18px;
+}
+
+/* Login attempts */
+.login-attempts {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Success message */
+.success-message {
+    background: #e0f7e9;
+    color: #2c662d;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container { flex-direction: column; }
+    .tabs { flex-direction: column; justify-content: center; }
+    .tab { width: 100%; }
+    .input-group { flex-direction: column; align-items: stretch; }
+    .input-group label { min-width: auto; margin-bottom: 5px; }
+    .captcha-container { flex-direction: column; align-items: flex-start; }
+    .option-group { flex-direction: column; }
+}

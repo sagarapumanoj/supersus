@@ -1,0 +1,126 @@
+:root {
+  --primary: #4361ee;
+  --secondary: #3f37c9;
+  --success: #4cc9f0;
+  --danger: #e63946;
+  --warning: #f72585;
+  --info: #4895ef;
+  --light: #f8f9fa;
+  --dark: #212529;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f5f7fb;
+  margin: 0;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  width: 220px;
+  height: 100vh;
+  background: linear-gradient(to bottom, var(--primary), var(--secondary));
+  color: white;
+  padding: 20px;
+}
+.sidebar .logo {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 20px;
+}
+.sidebar nav a {
+  display: block;
+  padding: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  margin: 5px 0;
+  text-decoration: none;
+}
+.sidebar nav a.active,
+.sidebar nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Main */
+.main {
+  margin-left: 240px;
+  padding: 20px;
+}
+.header {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.badge {
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+.badge.live { background: var(--primary); color: white; }
+.badge.pending { background: var(--warning); color: white; }
+.badge.success { background: var(--success); color: white; }
+.badge.info { background: var(--info); color: white; }
+.muted { color: #6c757d; margin-left: 10px; }
+
+.filter-bar {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+.filter-bar select {
+  padding: 6px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+/* Cards */
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 10px;
+  flex: 1;
+}
+.stats {
+  display: flex;
+  gap: 10px;
+}
+.stats .card {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Heatmap */
+.heatmap {
+  height: 250px;
+  background: var(--light);
+  border-radius: 10px;
+  position: relative;
+}
+.point {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+.point.high { background: var(--danger); }
+.point.medium { background: var(--warning); }
+.point.low { background: var(--info); }
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table th, table td {
+  border: 1px solid #eee;
+  padding: 8px;
+  text-align: left;
+}
